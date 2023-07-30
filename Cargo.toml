@@ -2,6 +2,12 @@
 name = "scpcb_redux_mapper"
 version = "0.1.0"
 edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "A map generation for SCPCB Redux"
+homepage = "https://github.com/scpcbredux/scpcb_redux_mapper/"
+documentation = "https://docs.rs/scpcb_redux_mapper"
+repository = "https://github.com/scpcbredux/scpcb_redux_mapper/"
+readme = "README.md"
 
 [dependencies]
 rand = "0.8.5"
