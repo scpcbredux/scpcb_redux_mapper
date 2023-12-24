@@ -29,8 +29,7 @@ struct Args {
 fn main() {
     let args = Args::parse();
 
-    let seed = seed_from_string(&args.seed);
-    let mut map = Map::new(16, 16, seed);
+    let mut map = Map::new_from_string(20, 20, &args.seed);
     while map.room_1_amount < 2 {
         map.generate(24);
     }

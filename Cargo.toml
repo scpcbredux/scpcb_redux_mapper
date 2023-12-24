@@ -13,10 +13,10 @@ readme = "README.md"
 rand = "0.8.5"
 
 [dev-dependencies]
-image = "0.24.5"
+image = "0.24.7"
 image_colored_text = "0.1.2"
 rusttype = "0.9.3"
-clap = { version = "4.3.19", features = ["derive"] }
+clap = { version = "4.4.11", features = ["derive"] }
 
 [[example]]
 name = "example"
