@@ -29,14 +29,12 @@ struct Args {
 fn main() {
     let args = Args::parse();
 
-    let mut map = Map::new_from_string(20, 20, &args.seed);
-    while map.room_1_amount < 2 {
-        map.generate(24);
-    }
+    let mut map = Map::new_from_string(&args.seed);
+    map.generate();
 
     let mut img_buf: RgbImage = ImageBuffer::from_pixel(
-        map.width * BLOCK_SIZE,
-        map.height * BLOCK_SIZE,
+        20 * BLOCK_SIZE,
+        20 * BLOCK_SIZE,
         Rgb([150, 150, 150]),
     );
 
@@ -44,9 +42,10 @@ fn main() {
     let mut cur_room_2 = 0;
     let mut cur_room_2c = 0;
 
-    for x in 0..map.width {
-        for y in 0..map.height {
-            if let Some(room) = map.room_array[x as usize][y as usize] {
+    for x in 0..20 {
+        for y in 0..20 {
+            let room = map.room_array[x as usize][y as usize];
+            if room.angle != -1.0 {
                 match room.kind {
                     RoomType::Room1 => match cur_room_1 {
                         0 => {
